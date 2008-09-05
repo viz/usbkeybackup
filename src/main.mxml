@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml"
+	                    xmlns:view="au.edu.usyd.ict.templates.puremvc.air"
+	                    layout="absolute" 
+	                    applicationComplete="onCreationComplete()" >
+
+<mx:Script>
+	<![CDATA[
+		
+			import au.edu.usyd.ict.USBKeyBackup.ApplicationFacade;
+
+			import org.puremvc.as3.patterns.observer.Notification;
+			
+			private var facade:ApplicationFacade = ApplicationFacade.getInstance();
+
+			private function onCreationComplete() : void
+			{
+				facade.notifyObservers(new Notification(ApplicationFacade.APP_STARTUP,this));
+			}
+		
+	]]>
+</mx:Script>
+
+<!-- Visual components below -->
+
+	
+</mx:WindowedApplication>
