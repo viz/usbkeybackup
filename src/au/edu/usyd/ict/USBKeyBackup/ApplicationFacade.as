@@ -8,9 +8,13 @@ package au.edu.usyd.ict.USBKeyBackup
 	public class ApplicationFacade extends Facade implements IFacade
 	{
 		// General definitions
+		public static const INIT_SUCCESS:String = "InitSuccess";
 		
 		// general application notifications
 		public static const APP_STARTUP:String = "AppStartup";
+		public static const APP_STARTUP_SUCCESS:String = "AppStartupComplete";
+		public static const FS_PROXY_INIT_SUCCESS:String = "FSProxyInitSuccess";
+		public static const FILE_SYSTEM_UPDATE:String = "FileSystemUpdate";
 
         public static function getInstance():ApplicationFacade
         {

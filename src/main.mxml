@@ -8,6 +8,7 @@
 	<![CDATA[
 		
 			import au.edu.usyd.ict.USBKeyBackup.ApplicationFacade;
+			import au.edu.usyd.ict.USBKeyBackup.model.FileSystemProxy;
 
 			import org.puremvc.as3.patterns.observer.Notification;
 			
@@ -22,6 +23,13 @@
 </mx:Script>
 
 <!-- Visual components below -->
+
+  <mx:VBox>
+  	<mx:HDividedBox right="10" left="10" top="10" bottom="10">
+		<mx:List id="driveList" width="150" minWidth="150" labelField="name"/>
+		<mx:FileSystemTree width="50%" height="100%" directory="{driveList.selectedItem as File}"/>
+	</mx:HDividedBox>
+ </mx:VBox>
 
 	
 </mx:WindowedApplication>
