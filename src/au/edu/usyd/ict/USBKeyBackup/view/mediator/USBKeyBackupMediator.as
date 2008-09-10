@@ -68,6 +68,11 @@ package au.edu.usyd.ict.USBKeyBackup.view.mediator
 		
 		public function dependencyInitSuccess(notification:INotification):void
 		{
+			// this approach is inefficient - every Proxy and Mediator will receive every notification
+			// if this becomes a problem, refactor this to have specific notifications for each object
+			// based on a naming convention so we don't have to add all these into the ApplicationFacade
+			// Then the requires(obj) function above could create a specific objserver for that object's notifications
+			
 			// get object from notification
 			var obj:Object = notification.getBody();
 			// check dictionary and set object status to true if present
