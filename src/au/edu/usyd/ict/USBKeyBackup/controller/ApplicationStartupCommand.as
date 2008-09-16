@@ -27,7 +27,7 @@ package au.edu.usyd.ict.USBKeyBackup.controller
 			startupProxy.requires(fsProxy);
 			startupProxy.requires(mainMediator);
 			
-			mainMediator.requires(fsProxy);
+			mainMediator.startup.requires(fsProxy);
 			
 			this.sendNotification(ApplicationFacade.INIT_SUCCESS, this);
 			
